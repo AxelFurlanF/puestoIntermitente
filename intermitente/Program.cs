@@ -23,12 +23,12 @@ namespace SimulacionExtracciones
 
             while (t <= tf)
             {
-                simulacion(ref t, ref tpll, ref ns, ref nt, ref ss, ref sll, ref staI, ref staF, ref tpsI, ref tpsF, itoI, itoF, stoI, stoF, rnd);
+                simulacion(ref t, ref tpll, ref ns, ref nt, ref ss, ref sll, ref staI, ref staF, ref tpsI, ref tpsF, ref itoI, ref itoF, ref stoI, ref stoF, rnd);
             }
             while (ns > 0)
             {
                 tpll = hv;
-                simulacion(ref t, ref tpll, ref ns, ref nt, ref ss, ref sll, ref staI, ref staF, ref tpsI, ref tpsF, itoI, itoF, stoI, stoF, rnd);
+                simulacion(ref t, ref tpll, ref ns, ref nt, ref ss, ref sll, ref staI, ref staF, ref tpsI, ref tpsF, ref itoI, ref itoF, ref stoI, ref stoF, rnd);
             }
 
             Console.WriteLine("Personas totales: " + nt);
@@ -52,7 +52,7 @@ namespace SimulacionExtracciones
         }
 
 
-        private static void simulacion(ref int t, ref int tpll, ref int ns, ref int nt, ref int ss, ref int sll, ref int staI, ref int staF, ref int tpsI, ref int tpsF, int itoI, int itoF, int stoI, int stoF, Random rnd)
+        private static void simulacion(ref int t, ref int tpll, ref int ns, ref int nt, ref int ss, ref int sll, ref int staI, ref int staF, ref int tpsI, ref int tpsF, ref int itoI, ref int itoF, ref int stoI, ref int stoF, Random rnd)
         {
 
             if (tpsF <= tpsI)
