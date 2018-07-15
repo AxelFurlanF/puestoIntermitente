@@ -36,7 +36,7 @@ namespace SimulacionExtracciones
             Console.WriteLine("STA fijo: "+staF+ " STA intermitente: " + staI);
 
 
-            Console.WriteLine("PTOF: " + ( stoF/t));
+            Console.WriteLine("PTOF: " + ( stoF*100/t));
 
             Console.WriteLine("Duración simulación: " + t);
 
