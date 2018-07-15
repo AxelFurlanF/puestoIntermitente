@@ -19,23 +19,22 @@ namespace SimulacionExtracciones
 
 
             
-            t = tpll=stoI=stoF=itoI=itoF = 0; tf = 200; ns = nt = 0; ss = sll = staF=staI = 0; tpsI = tpsF = hv;
+            t = tpll=stoI=stoF=itoI=itoF = 0; tf = 20000; ns = nt = 0; ss = sll = staF=staI = 0; tpsI = tpsF = hv;
 
             while (t <= tf)
             {
-                simulacion(ref t, ref tpll, ref ns, ref nt, ref ss, ref sll, ref staI, ref staF, tpsI, tpsF, itoI, itoF, stoI, stoF, rnd);
+                simulacion(ref t, ref tpll, ref ns, ref nt, ref ss, ref sll, ref staI, ref staF, ref tpsI, ref tpsF, itoI, itoF, stoI, stoF, rnd);
             }
             while (ns > 0)
             {
                 tpll = hv;
-                simulacion(ref t, ref tpll, ref ns, ref nt, ref ss, ref sll, ref staI, ref staF, tpsI, tpsF, itoI, itoF, stoI, stoF, rnd);
+                simulacion(ref t, ref tpll, ref ns, ref nt, ref ss, ref sll, ref staI, ref staF, ref tpsI, ref tpsF, itoI, itoF, stoI, stoF, rnd);
             }
 
             Console.WriteLine("Personas totales: " + nt);
             Console.WriteLine("PEC: " + (ss - sll - staF - staI) / nt);
             Console.WriteLine("STA fijo: "+staF+ " STA intermitente: " + staI);
 
-            Console.WriteLine("Atendidos: " + nt);
 
             Console.WriteLine("PTOF: " + ( stoF/t));
 
@@ -53,7 +52,7 @@ namespace SimulacionExtracciones
         }
 
 
-        private static void simulacion(ref int t, ref int tpll, ref int ns, ref int nt, ref int ss, ref int sll, ref int staI, ref int staF, int tpsI, int tpsF, int itoI, int itoF, int stoI, int stoF, Random rnd)
+        private static void simulacion(ref int t, ref int tpll, ref int ns, ref int nt, ref int ss, ref int sll, ref int staI, ref int staF, ref int tpsI, ref int tpsF, int itoI, int itoF, int stoI, int stoF, Random rnd)
         {
 
             if (tpsF <= tpsI)
@@ -67,7 +66,8 @@ namespace SimulacionExtracciones
                     if (ns >= 1)
                     {
                         int ta = generarTA(rnd);
-                        tpsF = t + ta;
+                        int ret = generarRET(rnd);
+                        tpsF = t + ta + ret;
                         staF = staF + ta;
                     }
                     else
@@ -86,8 +86,9 @@ namespace SimulacionExtracciones
                     if (ns == 1)
                     {
                         int ta = generarTA(rnd);
+                        int ret = generarRET(rnd);
                         staF = staF + ta;
-                        tpsF = t + ta;
+                        tpsF = t + ta +ret;
                         stoF = stoF + t - itoF;
                     }
                     else
@@ -95,7 +96,8 @@ namespace SimulacionExtracciones
                         if (ns == 7 && tpsI == hv)
                         {
                             int ta = generarTA(rnd);
-                            tpsI = t + ta;
+                            int ret = generarRET(rnd);
+                            tpsI = t + ta +ret;
                             staI = staI + ta;
                         }
                     }
@@ -112,7 +114,8 @@ namespace SimulacionExtracciones
                     if (ns > 6)
                     {
                         int ta = generarTA(rnd);
-                        staI = staI + ta;
+                        int ret = generarRET(rnd);
+                        staI = staI + ta+ ret;
                         tpsI = t + ta;
 
                     }
@@ -131,8 +134,9 @@ namespace SimulacionExtracciones
                     if (ns == 1)
                     {
                         int ta = generarTA(rnd);
+                        int ret = generarRET(rnd);
                         staF = staF + ta;
-                        tpsF = t + ta;
+                        tpsF = t + ta+ret;
                         stoF = stoF + t - itoF;
                     }
                     else
@@ -140,7 +144,8 @@ namespace SimulacionExtracciones
                         if (ns == 7 && tpsI ==hv)
                         {
                             int ta = generarTA(rnd);
-                            tpsI = t + ta;
+                            int ret = generarRET(rnd);
+                            tpsI = t + ta+ret;
                             staI = staI + ta;
                         }
                     }
