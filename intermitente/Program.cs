@@ -19,7 +19,7 @@ namespace SimulacionExtracciones
 
 
             
-            t = tpll=stoI=stoF=itoI=itoF = 0; tf = 20000; ns = nt = 0; ss = sll = staF=staI = 0; tpsI = tpsF = hv;
+            t = tpll=stoI=stoF=itoI=itoF = 0; tf = 200; ns = nt = 0; ss = sll = staF=staI = 0; tpsI = tpsF = hv;
 
             while (t <= tf)
             {
@@ -58,7 +58,7 @@ namespace SimulacionExtracciones
 
             if (tpsF <= tpsI)
             {
-                if (tpsF <= tpll)//salida fijo
+                if (tpsF < tpll)//salida fijo
                 {
                     t = tpsF;
                     ss = ss + t;
@@ -92,7 +92,7 @@ namespace SimulacionExtracciones
                     }
                     else
                     {
-                        if (ns == 7)
+                        if (ns == 7 && tpsI == hv)
                         {
                             int ta = generarTA(rnd);
                             tpsI = t + ta;
@@ -103,7 +103,7 @@ namespace SimulacionExtracciones
             }
             else
             {
-                if (tpsI <= tpll) //salida intermitente
+                if (tpsI < tpll) //salida intermitente
                 {
                     t = tpsI;
                     ss = ss + t;
@@ -137,7 +137,7 @@ namespace SimulacionExtracciones
                     }
                     else
                     {
-                        if (ns == 7)
+                        if (ns == 7 && tpsI ==hv)
                         {
                             int ta = generarTA(rnd);
                             tpsI = t + ta;
