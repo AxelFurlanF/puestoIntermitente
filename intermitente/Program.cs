@@ -63,7 +63,8 @@ namespace SimulacionExtracciones
                     ss = ss + t;
                     ns--;
                     nt++;
-                    if (ns >= 1)
+
+                    if ((ns==1 && tpsI==hv) || (ns>=2) )
                     {
                         int ta = generarTA(rnd);
                         int ret = generarRET(rnd);
@@ -83,7 +84,7 @@ namespace SimulacionExtracciones
                     int ia = generarIA(rnd);
                     tpll = t + ia;
                     ns++;
-                    if (ns == 1)
+                    if ((ns == 1)||(ns==2 && tpsF==hv))
                     {
                         int ta = generarTA(rnd);
                         int ret = generarRET(rnd);
@@ -93,7 +94,7 @@ namespace SimulacionExtracciones
                     }
                     else
                     {
-                        if (ns == 7 && tpsI == hv)
+                        if (ns == 6 && tpsI == hv)
                         {
                             int ta = generarTA(rnd);
                             int ret = generarRET(rnd);
@@ -111,7 +112,7 @@ namespace SimulacionExtracciones
                     ss = ss + t;
                     ns--;
                     nt++;
-                    if (ns > 6)
+                    if (ns >= 6)
                     {
                         int ta = generarTA(rnd);
                         int ret = generarRET(rnd);
@@ -131,7 +132,7 @@ namespace SimulacionExtracciones
                     int ia = generarIA(rnd);
                     tpll = t + ia;
                     ns++;
-                    if (ns == 1)
+                    if ((ns == 1) || (ns == 2 && tpsF == hv))
                     {
                         int ta = generarTA(rnd);
                         int ret = generarRET(rnd);
@@ -141,7 +142,7 @@ namespace SimulacionExtracciones
                     }
                     else
                     {
-                        if (ns == 7 && tpsI ==hv)
+                        if (ns == 6 && tpsI == hv)
                         {
                             int ta = generarTA(rnd);
                             int ret = generarRET(rnd);

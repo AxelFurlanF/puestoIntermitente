@@ -12,3 +12,10 @@ C:\Users\axelf\source\repos\intermitente\puestoIntermitente\intermitente\obj\Deb
 C:\Users\axelf\source\repos\intermitente\puestoIntermitente\intermitente\obj\Debug\intermitente.csproj.CoreCompileInputs.cache
 C:\Users\axelf\source\repos\intermitente\puestoIntermitente\intermitente\obj\Debug\intermitente.exe
 C:\Users\axelf\source\repos\intermitente\puestoIntermitente\intermitente\obj\Debug\intermitente.pdb
+C:\dev\puestoIntermitente\intermitente\bin\Debug\intermitente.exe.config
+C:\dev\puestoIntermitente\intermitente\bin\Debug\intermitente.exe
+C:\dev\puestoIntermitente\intermitente\bin\Debug\intermitente.pdb
+C:\dev\puestoIntermitente\intermitente\obj\Debug\intermitente.csprojResolveAssemblyReference.cache
+C:\dev\puestoIntermitente\intermitente\obj\Debug\intermitente.csproj.CoreCompileInputs.cache
+C:\dev\puestoIntermitente\intermitente\obj\Debug\intermitente.exe
+C:\dev\puestoIntermitente\intermitente\obj\Debug\intermitente.pdb
